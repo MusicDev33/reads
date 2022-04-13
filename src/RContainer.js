@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route
 } from 'react-router-dom';
 
@@ -25,8 +25,16 @@ export class RContainer extends Component {
       <Router>
         <Container fluid className="app-container px-0">
           <Row className="px-0 h-100">
-            <Col sm={1} className="px-4 py-2 text-center">
+            <Col sm={1} className="ps-4 pe-3 py-5 text-center">
               <RNavbar />
+            </Col>
+
+            <Col sm={8} className="py-2 px-0">
+              <div className="page-container">
+                <Routes>
+
+                </Routes>
+              </div>
             </Col>
           </Row>
         </Container>

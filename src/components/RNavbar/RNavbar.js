@@ -22,7 +22,7 @@ export class RNavbar extends Component {
     const rowClass = '';
 
     return (
-      <Container className="rnavbar py-4 px-0 text-center my-auto">
+      <Container className="rnavbar py-5 px-0 text-center my-auto">
         <Row className={rowClass}>
           <IconContext.Provider value={{ className: 'navbar-icon selected' }}>
             <FaBook />
