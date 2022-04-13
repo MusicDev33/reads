@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import { IconContext } from 'react-icons';
-import { FaBook } from 'react-icons/fa';
+import { FaBook, FaUserAlt, FaBookmark } from 'react-icons/fa';
 
 import './RNavbar.scss';
 
@@ -19,11 +19,27 @@ export class RNavbar extends Component {
   }
 
   render() {
+    const rowClass = '';
+
     return (
-      <Container className="rnavbar py-3 px-0 text-center my-auto">
-        <IconContext.Provider value={{ className: 'navbar-icon' }}>
-          <FaBook />
-        </IconContext.Provider>
+      <Container className="rnavbar py-4 px-0 text-center my-auto">
+        <Row className={rowClass}>
+          <IconContext.Provider value={{ className: 'navbar-icon selected' }}>
+            <FaBook />
+          </IconContext.Provider>
+        </Row>
+
+        <Row className={rowClass}>
+          <IconContext.Provider value={{ className: 'navbar-icon' }}>
+            <FaBookmark />
+          </IconContext.Provider>
+        </Row>
+
+        <Row className={rowClass}>
+          <IconContext.Provider value={{ className: 'navbar-icon' }}>
+            <FaUserAlt />
+          </IconContext.Provider>
+        </Row>
       </Container>
     );
   }
