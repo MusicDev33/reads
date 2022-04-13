@@ -1,5 +1,12 @@
 @import '~scss/_colors';
 
-.test-el {
-  background: $palette-1;
+.rnavbar {
+  background: #505050;
+
+  border-radius: 16px;
+  height: 100%;
+}
+
+.navbar-icon {
+  font-size: 200%;
 }
