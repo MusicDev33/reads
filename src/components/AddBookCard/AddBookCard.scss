@@ -19,6 +19,22 @@
   
     padding: 2px 5px;
   }
+
+  .check {
+    margin-top: 2px;
+    color: #ffffff;
+    font-size: 165%;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &.selected {
+      color: #17df64;
+    }
+
+    &:hover:not(.selected) {
+      color: #63e28d;
+    }
+  }
 }
 
 .md-btn-1 {
