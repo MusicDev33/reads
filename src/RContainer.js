@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import { Books } from 'pages/books/Books';
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -29,8 +31,9 @@ export class RContainer extends Component {
               <RNavbar />
             </Col>
 
-            <Col sm={8} className="py-2 px-0">
+            <Col sm={8} className="py-3 px-0">
               <div className="page-container">
+                <Books />
                 <Routes>
 
                 </Routes>
