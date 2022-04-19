@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BookCard } from 'components/BookCard/BookCard';
+import { AddBookCard } from 'components/AddBookCard/AddBookCard';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -52,6 +53,10 @@ export const Books = (props) => {
               <BookCard book={book} />
             </Col>
           ))}
+
+          <Col sm={4} className="py-2">
+            <AddBookCard />
+          </Col>
         </Row>
       </Container>
     </div>

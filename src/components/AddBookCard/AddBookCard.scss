@@ -1,0 +1,35 @@
+@import '~scss/_colors';
+
+.add-book-card {
+  border-radius: 16px;
+  background: #3f3e46;
+  height: 100%;
+
+  .card-input {
+    border-radius: 0;
+    background: transparent;
+    outline: none!important;
+    box-shadow: none!important;
+    border: none;
+    border-bottom: 2px solid white;
+  
+    caret-color: white;
+  
+    color: white;
+  
+    padding: 2px 5px;
+  }
+}
+
+.md-btn-1 {
+  border-radius: 999px;
+  padding: 2px 15px;
+  background: $palette-1;
+  outline: none!important;
+  box-shadow: none!important;
+  border: none;
+
+  &:hover {
+    background: $palette-1-dark;
+  }
+}
