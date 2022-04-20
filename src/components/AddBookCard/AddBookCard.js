@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './AddBookCard.scss';
 
@@ -16,8 +16,11 @@ export const AddBookCard = () => {
   const [author, setAuthor] = useState('');
   const [pages, setPages] = useState('');
   const [isRead, setIsRead] = useState(false);
-  const [checkClass, setCheckClass] = useState('check');
-  const [checkIcon, setCheckIcon] = useState((<FaRegCheckCircle onClick={() => setIsRead(!isRead)} />));
+  const [checkIcon, setCheckIcon] = useState(isRead ? <FaCheckCircle /> : <FaRegCheckCircle />);
+
+  useEffect(() => {
+    setCheckIcon(isRead ? <FaCheckCircle /> : <FaRegCheckCircle />);
+  }, [isRead]);
 
   return (
 
@@ -38,8 +41,12 @@ export const AddBookCard = () => {
             <FormControl inputMode="numeric" placeholder="Pages" className="card-input" value={pages} onChange={e => setPages(e.target.value)} />
           </Col>
           <Col className="pt-1">
-            <IconContext.Provider value={{ className: checkClass }}>
-              {checkIcon}
+            <IconContext.Provider value={{ className: `check ${isRead && 'selected'}` }}>
+              <div onClick={() => {
+                setIsRead(isRead => !isRead);
+              }}>
+                {checkIcon}
+              </div>
             </IconContext.Provider>
           </Col>
           <Col className="text-end pt-2">

@@ -49,7 +49,7 @@ export const Books = (props) => {
       <Container>
         <Row className="pt-3">
           {books.map(book => (
-            <Col sm={4} className="py-2">
+            <Col sm={4} className="py-2" key={book.title}>
               <BookCard book={book} />
             </Col>
           ))}
