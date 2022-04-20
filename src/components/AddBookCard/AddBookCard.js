@@ -6,10 +6,11 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
 
 import { IconContext } from 'react-icons';
 import { FaRegCheckCircle, FaCheckCircle } from 'react-icons/fa';
+
+import { createOneBook } from 'services/book.service';
 
 export const AddBookCard = () => {
   const [title, setTitle] = useState('');
@@ -50,7 +51,23 @@ export const AddBookCard = () => {
             </IconContext.Provider>
           </Col>
           <Col className="text-end pt-2">
-            <Button className="md-btn-1">Submit</Button>
+            <button className="md-btn-1" onClick={async () => {
+              const data = {
+                pages,
+                title,
+                author,
+                finished: isRead
+              };
+
+              await createOneBook(data);
+
+              setTitle('');
+              setAuthor('');
+              setPages('');
+              setIsRead(false);
+            }}>
+              Submit
+            </button>
           </Col>
         </Row>
       </Container>

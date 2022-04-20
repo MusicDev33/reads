@@ -1,3 +1,7 @@
+### Quick Dev Notes
+
+Don't forget to add an `env.js` file in the `src` folder. An example of an `env.js` file can be found in `env.defaults.js`.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
