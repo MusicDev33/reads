@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+import { getLatestBooks } from 'services/book.service';
+
 import { BookCard } from 'components/BookCard/BookCard';
 import { AddBookCard } from 'components/AddBookCard/AddBookCard';
 
@@ -7,41 +10,18 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 export const Books = (props) => {
-  const [books, setBooks] = useState([
-    {
-      _id: "62561bfb472e617a4f7cfda4",
-      pages: 736,
-      title: "The Dawn of Everything",
-      author: "David Graeber",
-      finished: false,
-      __v: 0
-    },
-    {
-      _id: "62561bfb472e617a4f7cfda5",
-      pages: 408,
-      title: "Envisioning Real Utopias",
-      author: "Erik Olin Wright",
-      finished: false,
-      __v: 0
-    },
-    {
-      _id: "62561bfb472e617a4f7cfda6",
-      pages: 250,
-      title: "Guns, Germs, and Steel",
-      author: "Jared Diamond",
-      finished: true,
-      __v: 0
-    },
-    {
-      _id: "62561bfb472e617a4f7cfda7",
-      pages: 500,
-      title: "Sapiens",
-      author: "Yuval Noah Harrari",
-      finished: true,
-      __v: 0
-    }
-  ]);
+  const [books, setBooks] = useState([]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getLatestBooks(30);
+      console.log(data);
+      setBooks(data.data);
+    }
+
+    fetchData();
+
+  }, []);
 
 
   return (

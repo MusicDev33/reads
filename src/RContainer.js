@@ -34,7 +34,7 @@ export class RContainer extends Component {
             <Col sm={8} className="py-3 px-0">
               <div className="page-container">
                 <Routes>
-                  <Route path="/books" element={<Books />} />
+                  <Route path="/books" exact element={<Books />} />
                 </Routes>
               </div>
             </Col>
