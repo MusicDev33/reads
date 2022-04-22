@@ -8,6 +8,18 @@
   max-width: 70px;
 }
 
+.r-nav-link.selected {
+  .navbar-icon {
+    color: $palette-1;
+  }
+}
+
+.r-nav-link:not(.selected) {
+  .navbar-icon:hover {
+    color: $palette-1-light;
+  }
+}
+
 .navbar-icon {
   font-size: 220%;
   color: #8a8a8a;
@@ -15,12 +27,4 @@
 
   transition: 0.3s;
   cursor: pointer;
-
-  &:hover:not(.selected) {
-    color: $palette-1-light;
-  }
-
-  &.selected {
-    color: $palette-1;
-  }
 }

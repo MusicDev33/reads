@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { RNavbar } from 'components/RNavbar/RNavbar';
+import RNavbar from 'components/RNavbar/RNavbar';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -33,9 +33,8 @@ export class RContainer extends Component {
 
             <Col sm={8} className="py-3 px-0">
               <div className="page-container">
-                <Books />
                 <Routes>
-
+                  <Route path="/books" element={<Books />} />
                 </Routes>
               </div>
             </Col>
