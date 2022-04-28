@@ -28,4 +28,25 @@
     color: #d6d6d6;
     font-size: 95%;
   }
+
+  .pages-input {
+    text-align: center;
+
+    border: none;
+    max-width: 45px;
+    outline: none;
+    color: white;
+
+    border-bottom: 2px solid #333333;
+    transition: 0.3s;
+    background: transparent;
+
+    &:hover:not(:focus) {
+      border-color: $palette-1-light;
+    }
+
+    &:focus {
+      border-color: $palette-1;
+    }
+  }
 }

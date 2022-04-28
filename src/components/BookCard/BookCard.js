@@ -27,9 +27,11 @@ export const BookCard = ({book}) => {
             <ProgressBar now={60} className="progress" label={`${60}%`} />
           </Col>
         </Row>
-        <Row>
+        <Row className="mt-2">
           <Col>
-            <div className="pages text-center">???/{book.pages} pages</div>
+            <div className="pages text-center">
+              <input className="pages-input" /> /{book.pages} pages
+              </div>
           </Col>
         </Row>
       </Container>
