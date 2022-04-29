@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import { Books } from 'pages/books/Books';
+import { InfoView } from 'components/InfoView/InfoView';
 
 import {
   BrowserRouter as Router,
@@ -36,6 +37,18 @@ export class RContainer extends Component {
                 <Routes>
                   <Route path="/books" exact element={<Books />} />
                 </Routes>
+              </div>
+            </Col>
+
+            <Col className="py-3 px-4">
+              <div className="page-container me-2">
+                <InfoView type="book" data={{author: "David Graeber",
+                                              finished: false,
+                                              pages: 736,
+                                              title: "The Dawn of Everything",
+                                              __v: 0,
+                                              _id: "62561bfb472e617a4f7cfda4"}} 
+                />
               </div>
             </Col>
           </Row>
